@@ -1,0 +1,212 @@
+@import "../../utilities/variables.scss";
+
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+
+    .lose {
+        color: $game-over-color !important;
+    }
+
+    .win {
+        color: $important-color !important;
+    }
+
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $background-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        &-content {
+            min-width: 500px;
+            background-color: $arena-color;
+            border-radius: 0.625rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $main-font-color;
+
+            &-title {
+                font-size: 2rem;
+                font-weight: 900;
+                color: $accent-color;
+                margin: 1rem 0 1.25rem 0;
+            }
+
+            &-rules {
+                margin: 0 2rem 0 2rem;
+                font-size: 1.25rem;
+                text-align: center;
+
+                p {
+                    margin: 1rem 0 1rem 0;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 3px;
+                }
+
+                &-start-round-button {
+                    border: none;
+                    border-radius: 0.625rem;
+                    background-color: $important-color;
+                    color: $main-font-color;
+                    font-weight: 900;
+                    padding: 0.625rem;
+                    font-size: 1.25rem;
+                }
+            }
+
+            &-button {
+                margin: 1rem 0 1.25rem 0;
+                color: $main-font-color;
+                border: none;
+                border-radius: 0.625rem;
+                background-color: $important-color;
+                cursor: pointer;
+                padding: 0.625rem;
+                font-size: 1.25rem;
+            }
+
+            &-image-container {
+                max-width: 200px;
+                max-height: 200px;
+                border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 1.25rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &-arena {
+        width: 500px;
+        height: 500px;
+        background-color: $arena-color;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+
+        &-round {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            .point {
+                background-color: $main-font-color;
+                font-weight: 900    ;
+            }
+
+            p {
+                
+                margin: 0 auto;
+                padding: 1rem;
+                border-radius: 0.625rem;
+                width: fit-content;
+                color: $accent-color;
+                font-size: 1.75rem;
+            }
+        }
+
+        &-infos {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: $accent-color;
+        }
+
+        .hand {
+            position: absolute;
+            top: 160px;
+        }
+
+        .user {
+            left: -100%;
+        }
+
+        .slide-from-left {
+            animation: hand-slide-from-left 0.5s forwards;
+        }
+
+        @keyframes hand-slide-from-left {
+            100% {
+                left: 0;
+            }
+        }
+
+        .ai {
+            right: -100%;
+        }
+
+        .slide-from-right {
+            animation: hand-slide-from-right 0.5s forwards;
+        }
+
+        @keyframes hand-slide-from-right {
+            100% {
+                right: 0;
+            }
+        }
+    }
+
+    &-start-game-button {
+        margin-top: 1rem;
+        border: none;
+        border-radius: 0.625rem;
+        background-color: $important-color;
+        color: $main-font-color;
+        font-weight: 900;
+        cursor: pointer;
+        padding: 0.625rem;
+        font-size: 2rem;
+    }
+
+    &-weapon-selection {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1em;
+
+        button {
+            border: none;
+            border-radius: 0.625rem;
+            background-color: $button-color;
+            cursor: pointer;
+            padding: 0.625rem;
+        }
+
+        button:hover:not([disabled]) {
+            background-color: $accent-color;
+        }
+
+        .weapon-selected {
+            background-color: $accent-color;
+        }
+    }
+}
