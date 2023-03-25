@@ -1,3 +1,4 @@
+import React from 'react';
 import Rock from '../../assets/rock';
 import Paper from '../../assets/paper';
 import Scissors from '../../assets/scissors';
