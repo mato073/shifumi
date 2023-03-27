@@ -43,19 +43,6 @@ const GameBoard = () => {
         closeModal()
     }
 
-    const handOption = {
-        "user": {
-            "rock": <Rock width={150} height={150} direction="left" />,
-            "paper": <Paper width={150} height={150} direction="left" />,
-            "scissors": <Scissors width={150} height={150} direction="left" />
-        },
-        "ai": {
-            "rock": <Rock width={150} height={150} direction="right" />,
-            "paper": <Paper width={150} height={150} direction="right" />,
-            "scissors": <Scissors width={150} height={150} direction="right" />
-        }
-    }
-
     const ModalElement = () => {
         if (fistStart) {
             return <WelcomeModal calback={fistStartGame} />
