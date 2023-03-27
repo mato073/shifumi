@@ -15,15 +15,10 @@ type weapon = {
     type: keyof weaponType,
     player: directionType
 }
-type elementType = {
-    rock: JSX.Element
-    paper: JSX.Element
-    scissors: JSX.Element
-}
 
 const Weapon = ({ height, width, type, player }: weapon) => {
 
-    const handOption: elementType = {
+    const handOption: weaponType = {
         "rock": <Rock width={width} height={height} direction={player} />,
         "paper": <Paper width={width} height={height} direction={player} />,
         "scissors": <Scissors width={width} height={height} direction={player} />
